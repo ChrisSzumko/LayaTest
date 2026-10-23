@@ -1,0 +1,20 @@
+[project]
+name = "layatest"
+version = "0.1.0"
+requires-python = ">=3.14"
+dependencies = ["laya==0.4.13", "streamlit==1.66.1", "torch>=2.0.0"]
+
+[dependency-groups]
+dev = ["pytest==9.1.1"]
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
